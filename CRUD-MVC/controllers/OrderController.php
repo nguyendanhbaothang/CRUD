@@ -3,7 +3,7 @@
     class OrderController {
         // Hien thi tat ca
         public function index(){
-            $objOrders= new Orders();
+            $objOrders= new Order();
             $items =  $objOrders->all();
             // var_dump($items);
             //goi view
@@ -12,7 +12,7 @@
         // Hien thi chi tiet
         public function show(){
             $id = $_GET['id'];
-            $objOrders= new Orders();
+            $objOrders= new Order();
             $item = $objOrders->find($id);
             include_once 'views/orders/show.php';
         }
@@ -24,23 +24,23 @@
         public function store(){
             $data=[
                 'MAKHACHHANG'=> $_REQUEST['MAKHACHHANG'],
-                'MANHANVIEN'       => $_REQUEST['MANHANVIEN'],
-                'NGAYDATHANG'      => $_REQUEST['NGAYDATHANG'],
-                'NGAYGIAOHANG'      => $_REQUEST['NGAYGIAOHANG'],
-                'NGAYCHUYENHANG'      => $_REQUEST['NGAYCHUYENHANG'],
-                'NOIGIAOHANG'      => $_REQUEST['NOIGIAOHANG']
+                'MANHANVIEN'=> $_REQUEST['MANHANVIEN'],
+                'NGAYDATHANG'=> $_REQUEST['NGAYDATHANG'],
+                'NGAYGIAOHANG'=> $_REQUEST['NGAYGIAOHANG'],
+                'NGAYCHUYENHANG'=> $_REQUEST['NGAYCHUYENHANG'],
+                'NOIGIAOHANG'=> $_REQUEST['NOIGIAOHANG']
             ];
             // echo '<pre>';
             // print_r($data);
             // die();
-            $objOrders = new Orders();
+            $objOrders = new Order();
             $objOrders->save($data);
             header('Location: index.php?controller=order&page=index');
         }
         // Hien thi form edit
         public function edit(){
             $id = $_GET['id'];
-            $objOrders = new Orders();
+            $objOrders = new Order();
             $item = $objOrders->find($id);
             include_once 'views/orders/edit.php';
         }
@@ -49,14 +49,14 @@
             $id = $_REQUEST['id'];
             $data=[
                 'MAKHACHHANG'=> $_REQUEST['MAKHACHHANG'],
-                'MANHANVIEN'       => $_REQUEST['MANHANVIEN'],
-                'NGAYDATHANG'      => $_REQUEST['NGAYDATHANG'],
-                'NGAYGIAOHANG'      => $_REQUEST['NGAYGIAOHANG'],
-                'NGAYCHUYENHANG'      => $_REQUEST['NGAYCHUYENHANG'],
-                'NOIGIAOHANG'      => $_REQUEST['NOIGIAOHANG']
+                'MANHANVIEN'=> $_REQUEST['MANHANVIEN'],
+                'NGAYDATHANG'=> $_REQUEST['NGAYDATHANG'],
+                'NGAYGIAOHANG'=> $_REQUEST['NGAYGIAOHANG'],
+                'NGAYCHUYENHANG'=> $_REQUEST['NGAYCHUYENHANG'],
+                'NOIGIAOHANG'=> $_REQUEST['NOIGIAOHANG']
             ];
 
-            $objOrders = new Orders();
+            $objOrders = new Order();
                 //   print_r(123);
                 //  die();
             $objOrders->update($id, $data);
@@ -65,7 +65,7 @@
         // Phuong thuc delete
         public function delete(){
             $id = $_REQUEST['id'];
-            $objOrders = new Orders();
+            $objOrders = new Order();
             $objOrders->delete($id);
             header('Location: index.php?controller=order&page=index');
         }

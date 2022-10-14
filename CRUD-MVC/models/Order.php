@@ -1,5 +1,5 @@
 <?php
-    class Orders {
+    class Order {
         protected $table = 'c10_don_dat_hang';
         // goi CSDL lay tat ca records
         public function all(){
