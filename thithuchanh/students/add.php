@@ -69,7 +69,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <option value="<?=$row->id;?>"><?=$row->name_class;?></option>
                     <?php } ?>
                 </select><br>
-
   <label for="disabledTextInput"></label><br>
   <input type="date" id="fname" class="form-control" placeholder="Ngày sinh" name="birthday"><br>
   <span><?php if(isset($err['birthday'])){echo $err['birthday'];}; ?></span><br>

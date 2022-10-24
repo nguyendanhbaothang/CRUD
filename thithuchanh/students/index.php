@@ -13,7 +13,7 @@
     ?>
     <?php
     global $conn;
-    $sql = "SELECT * FROM students";
+    $sql = "SELECT students.*, class.name_class as class_name FROM students join class on students.class= class.id";
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     //fetchALL se tra ve du lieu nhieu hon 1 ket qua
@@ -35,7 +35,7 @@
             <tr>
                 <td><?= $key + 1 ?></td>
                 <td><?= $row->name ?></td>
-                <td><?= $row->class ?></td>
+                <td><?= $row->class_name ?></td>
                 <td><?= $row->birthday ?></td>
                 <td><?= $row->gender ?></td>
                 <td><?= $row->thongtin ?></td>
