@@ -42,7 +42,7 @@
         }
 
         // cap nhat record
-        public function update( $id, $data ){
+       public function update( $id, $data ){
             $MAKHACHHANG = $data['MAKHACHHANG'];
             $MANHANVIEN = $data['MANHANVIEN'];
             $NGAYDATHANG = $data['NGAYDATHANG'];
